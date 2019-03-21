@@ -2,7 +2,7 @@ const cheerio = require('cheerio');
 const fetch = require('node-fetch');
 const pLimit = require('p-limit');
 const pSettle = require('p-settle');
-const {IMDB_NAME_URL, IMDB_URL, P_LIMIT} = require('./constants');
+const {IMDB_NAME_URL, IMDB_URL, P_LIMIT} = require('../constants');
 
 /**
  * Get filmography for a given actor
