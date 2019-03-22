@@ -36,12 +36,12 @@ var app = Express();
     app.get("/movies/populate", (request, response) => {
         
         //data import into mongoDB
-        importation();
+        //importation();
         collection.find({}).toArray((error, result) => {
             if(error) {
                 return response.status(500).send(error);
             }
-            response.send("Data will be imported into the mongodb Cluster !");
+            response.send(result);
         });
     });
 
@@ -133,5 +133,5 @@ app.use('/graphql', graphqlHTTP({
   
 
     
-   
+
 
