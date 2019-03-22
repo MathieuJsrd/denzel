@@ -8,6 +8,11 @@ const CONNECTION_URL = "mongodb+srv://MathieuJsrd:Rosalie1801@cluster0-5iyod.mon
 const DATABASE_NAME = "Denzel_Cluster_Joss";
 const DENZEL_IMDB_ID = 'nm0000243';
 
+const graphqlHTTP = require('express-graphql');
+const {GraphQLSchema} = require('graphql');
+const {queryType} = require('./graphql.js');
+
+
 
 var app = Express();
 
@@ -117,6 +122,12 @@ var app = Express();
     });
 
 
+const schema = new GraphQLSchema({ query: queryType });
+//Setup the nodejs GraphQL server
+app.use('/graphql', graphqlHTTP({
+    schema: schema,
+    graphiql: true,
+}));
 
 
   
